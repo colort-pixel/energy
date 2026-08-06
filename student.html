@@ -1,0 +1,1569 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>[학생용] 2학년 역학과 에너지 - 물리 개념 탐구 독서 보고서</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&family=Outfit:wght@500;700&display=swap" rel="stylesheet">
+    
+    <style>
+/* Reset & Base Styles - Clean Soft Pastel Theme */
+:root {
+    --primary-color: #4f46e5;       /* Indigo */
+    --primary-dark: #4338ca;
+    --primary-light: #eef2ff;
+    --accent-color: #7c3aed;        /* Violet */
+    --accent-light: #f5f3ff;
+    --success-color: #10b981;       /* Mint/Emerald */
+    --warning-color: #f59e0b;       /* Warm Amber */
+    --danger-color: #ef4444;        /* Soft Red */
+    
+    --bg-gradient: linear-gradient(135deg, #f0f4ff 0%, #e8f0fe 50%, #f5f3ff 100%);
+    --card-bg: #ffffff;
+    --card-border: #e2e8f0;
+    --input-bg: #f8fafc;
+    
+    --text-primary: #1e293b;
+    --text-secondary: #64748b;
+    --text-muted: #94a3b8;
+    
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 20px;
+    
+    --shadow-subtle: 0 10px 30px -10px rgba(0, 0, 0, 0.06);
+    --shadow-glow: 0 4px 20px rgba(79, 70, 229, 0.15);
+    
+    --font-family: 'Noto Sans KR', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-family);
+    background: var(--bg-gradient);
+    color: var(--text-primary);
+    min-height: 100vh;
+    padding: 1.5rem 1rem;
+    line-height: 1.6;
+    user-select: none;
+}
+
+/* App Container */
+.app-container {
+    max-width: 920px;
+    margin: 0 auto;
+}
+
+/* Header */
+.main-header {
+    text-align: center;
+    margin-bottom: 2.25rem;
+}
+
+.main-header .badge {
+    display: inline-block;
+    padding: 0.4rem 1.2rem;
+    background: var(--accent-light);
+    border: 1px solid #ddd6fe;
+    color: #6d28d9;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    letter-spacing: 0.5px;
+}
+
+.main-header h1 {
+    font-size: 2.2rem;
+    font-weight: 900;
+    color: #1e1b4b;
+    margin-bottom: 0.5rem;
+}
+
+.main-header .subtitle {
+    font-size: 1.02rem;
+    color: var(--text-secondary);
+    margin-bottom: 1.25rem;
+}
+
+.notice-banner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    background: rgba(79, 70, 229, 0.06);
+    border: 1px dashed rgba(79, 70, 229, 0.3);
+    padding: 0.75rem 1.25rem;
+    border-radius: var(--radius-md);
+    color: #3730a3;
+    font-size: 0.92rem;
+    font-weight: 500;
+}
+
+/* Card Container */
+.report-card, .teacher-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius-lg);
+    padding: 2.25rem;
+    box-shadow: var(--shadow-subtle);
+}
+
+/* Form Section */
+.form-section {
+    margin-bottom: 2.25rem;
+    padding-bottom: 1.75rem;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.form-section:last-of-type {
+    border-bottom: none;
+    margin-bottom: 1rem;
+}
+
+.section-header-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.25rem;
+}
+
+.section-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #0f172a;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.step-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 28px;
+    height: 28px;
+    background: var(--primary-color);
+    color: #ffffff;
+    border-radius: 50%;
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+/* Badges & Counter */
+.sentence-badge {
+    padding: 0.35rem 0.85rem;
+    background: #ecfdf5;
+    border: 1px solid #a7f3d0;
+    color: #047857;
+    font-size: 0.85rem;
+    font-weight: 700;
+    border-radius: var(--radius-sm);
+    transition: all 0.3s ease;
+}
+
+.sentence-badge.exceeded {
+    background: #fef2f2;
+    border-color: #fca5a5;
+    color: #b91c1c;
+    animation: pulse 1s infinite alternate;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.04); }
+}
+
+/* Guide Box */
+.guide-box {
+    background: #f8fafc;
+    border-left: 4px solid var(--primary-color);
+    padding: 1rem 1.25rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.25rem;
+}
+
+.guide-text {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.6;
+}
+
+.option-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+    list-style: none;
+}
+
+.option-tags li {
+    background: #eef2ff;
+    border: 1px solid #c7d2fe;
+    padding: 0.3rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.82rem;
+    color: #3730a3;
+    font-weight: 500;
+}
+
+/* Grid & Input Styling */
+.grid-2col {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.25rem;
+}
+
+@media (max-width: 640px) {
+    .grid-2col {
+        grid-template-columns: 1fr;
+    }
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+
+.input-group label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #334155;
+}
+
+.required {
+    color: var(--danger-color);
+}
+
+input[type="text"], select, textarea {
+    width: 100%;
+    padding: 0.85rem 1rem;
+    background: var(--input-bg);
+    border: 1px solid #cbd5e1;
+    border-radius: var(--radius-sm);
+    color: #0f172a;
+    font-family: inherit;
+    font-size: 0.95rem;
+    transition: all 0.25s ease;
+    user-select: text;
+}
+
+select {
+    cursor: pointer;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23475569'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1.25rem;
+    appearance: none;
+}
+
+select option {
+    background: #ffffff;
+    color: #0f172a;
+}
+
+input[type="text"]:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.2);
+    background: #ffffff;
+}
+
+textarea {
+    resize: vertical;
+    line-height: 1.6;
+}
+
+.textarea-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+    font-size: 0.85rem;
+}
+
+.warning-text {
+    color: #dc2626;
+    display: none;
+    font-weight: 600;
+}
+
+/* Concept Hint Box */
+.concept-hint-box {
+    background: #f5f3ff;
+    border: 1px solid #ddd6fe;
+    border-radius: var(--radius-sm);
+    padding: 0.85rem 1.1rem;
+    font-size: 0.9rem;
+    color: #5b21b6;
+    margin-top: 0.5rem;
+}
+
+/* Action Controls & Buttons */
+.form-actions-wrapper {
+    margin-top: 2rem;
+}
+
+.action-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    justify-content: flex-end;
+}
+
+.btn {
+    padding: 0.8rem 1.4rem;
+    border-radius: var(--radius-sm);
+    font-size: 0.95rem;
+    font-weight: 700;
+    font-family: inherit;
+    cursor: pointer;
+    border: none;
+    transition: all 0.25s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.4);
+}
+
+.btn-accent {
+    background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(124, 58, 237, 0.3);
+}
+
+.btn-accent:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(124, 58, 237, 0.4);
+}
+
+.btn-secondary {
+    background: #f1f5f9;
+    color: #475569;
+    border: 1px solid #cbd5e1;
+}
+
+.btn-secondary:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
+
+.btn-success:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(16, 185, 129, 0.4);
+}
+
+.btn-success-large {
+    background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+    color: #ffffff;
+    padding: 0.9rem 1.8rem;
+    font-size: 1.05rem;
+    font-weight: 800;
+    box-shadow: 0 4px 15px rgba(16, 185, 129, 0.35);
+}
+
+.btn-success-large:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(16, 185, 129, 0.5);
+}
+
+.btn-danger-outline {
+    background: transparent;
+    color: #ef4444;
+    border: 1px solid rgba(239, 68, 68, 0.4);
+}
+
+.btn-danger-outline:hover {
+    background: #fef2f2;
+}
+
+.btn-xs {
+    padding: 0.35rem 0.75rem;
+    font-size: 0.8rem;
+    border-radius: 4px;
+    background: #f1f5f9;
+    color: #334155;
+    border: 1px solid #cbd5e1;
+    cursor: pointer;
+}
+
+.btn-xs:hover {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+/* Modals & Toast */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10000;
+    padding: 1.5rem;
+}
+
+.modal.hidden {
+    display: none !important;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(15, 23, 42, 0.6);
+    backdrop-filter: blur(4px);
+}
+
+.modal-content {
+    position: relative;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: var(--radius-lg);
+    width: 100%;
+    max-width: 840px;
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    z-index: 10001;
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.25rem 1.75rem;
+    background: #f8fafc;
+    border-bottom: 1px solid #e2e8f0;
+}
+
+.modal-header h2 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #0f172a;
+}
+
+.close-btn {
+    background: none;
+    border: none;
+    color: #64748b;
+    font-size: 1.75rem;
+    cursor: pointer;
+    line-height: 1;
+}
+
+.close-btn:hover {
+    color: #0f172a;
+}
+
+.modal-body {
+    padding: 2rem;
+    overflow-y: auto;
+    flex: 1;
+    color: #1e293b;
+}
+
+.modal-footer {
+    padding: 1.25rem 1.75rem;
+    background: #f8fafc;
+    border-top: 1px solid #e2e8f0;
+    display: flex;
+    justify-content: flex-end;
+    gap: 1rem;
+}
+
+/* Success Modal Styling */
+.success-modal-style {
+    max-width: 500px;
+    background: #ffffff;
+    border: 2px solid #10b981;
+    box-shadow: 0 20px 40px rgba(16, 185, 129, 0.25);
+    animation: modalPop 0.35s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.success-modal-body {
+    padding: 2.25rem 1.75rem;
+    text-align: center;
+}
+
+.success-icon-large {
+    font-size: 3.8rem;
+    margin-bottom: 0.5rem;
+}
+
+.success-modal-body h2 {
+    font-size: 1.45rem;
+    font-weight: 800;
+    color: #059669;
+    margin-bottom: 0.75rem;
+}
+
+.success-modal-desc {
+    font-size: 0.95rem;
+    color: #334155;
+    line-height: 1.7;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    padding: 1rem;
+    border-radius: var(--radius-sm);
+    margin-bottom: 1.5rem;
+    text-align: left;
+}
+
+.success-btn-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Warning Modal Styling */
+.warning-modal-style {
+    max-width: 460px;
+    background: #ffffff;
+    border: 2px solid #ef4444;
+    box-shadow: 0 20px 40px rgba(239, 68, 68, 0.2);
+    animation: modalPop 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+@keyframes modalPop {
+    from { transform: scale(0.85); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.warning-modal-body {
+    padding: 2.25rem 1.75rem;
+    text-align: center;
+}
+
+.warning-icon-large {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.warning-modal-body h2 {
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #dc2626;
+    margin-bottom: 0.75rem;
+}
+
+.warning-modal-desc {
+    font-size: 0.95rem;
+    color: #475569;
+    line-height: 1.7;
+}
+
+/* Toast Notifications - Top Fixed Position for Mobile & Soft Keyboard Visibility */
+.toast {
+    position: fixed;
+    top: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #dc2626;
+    color: #ffffff;
+    padding: 0.9rem 1.75rem;
+    border-radius: 50px;
+    font-size: 0.95rem;
+    font-weight: 700;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    z-index: 30000;
+    transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    max-width: 90vw;
+    text-align: center;
+}
+
+.toast.info {
+    background: #2563eb;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.35);
+}
+
+.toast.success {
+    background: #059669;
+    box-shadow: 0 10px 30px rgba(5, 150, 105, 0.35);
+}
+
+.toast.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -20px);
+}
+
+/* Input Error Highlighting */
+input.input-error, select.input-error, textarea.input-error {
+    border-color: #ef4444 !important;
+    background-color: #fef2f2 !important;
+    box-shadow: 0 0 0 3px rgba(239, 68, 68, 0.2) !important;
+}
+
+.hidden {
+    display: none !important;
+}
+
+/* Printable Paper Layout */
+.paper-document {
+    background: #ffffff;
+    color: #1e293b;
+    padding: 2.5rem 3rem;
+    border-radius: 4px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+    font-family: 'Noto Sans KR', sans-serif;
+}
+
+.paper-header {
+    text-align: center;
+    border-bottom: 2px solid #0f172a;
+    padding-bottom: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.paper-header h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    color: #0f172a;
+    margin-bottom: 0.25rem;
+}
+
+.paper-header .paper-sub {
+    font-size: 0.95rem;
+    color: #64748b;
+}
+
+.paper-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5rem;
+}
+
+.paper-table th, .paper-table td {
+    border: 1px solid #cbd5e1;
+    padding: 0.75rem 1rem;
+    font-size: 0.95rem;
+}
+
+.paper-table th {
+    background: #f1f5f9;
+    color: #0f172a;
+    font-weight: 700;
+    width: 25%;
+}
+
+.paper-section {
+    margin-bottom: 1.5rem;
+}
+
+.paper-section-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #0f172a;
+    border-left: 4px solid #4f46e5;
+    padding-left: 0.6rem;
+    margin-bottom: 0.75rem;
+}
+
+.paper-box {
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    padding: 1.25rem;
+    border-radius: 6px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.footer-stamp {
+    margin-top: 2rem;
+    text-align: right;
+    font-size: 0.88rem;
+    color: #64748b;
+    border-top: 1px dashed #cbd5e1;
+    padding-top: 1rem;
+}
+
+/* Print CSS */
+@media print {
+    body {
+        background: #ffffff !important;
+        color: #000000 !important;
+        padding: 0 !important;
+    }
+    
+    .app-container > header,
+    .report-card,
+    .teacher-card,
+    .modal-header,
+    .modal-footer,
+    .modal-overlay,
+    .toast,
+    .main-footer {
+        display: none !important;
+    }
+    
+    .modal {
+        position: static !important;
+        width: 100% !important;
+        height: auto !important;
+        padding: 0 !important;
+    }
+    
+    .modal-content {
+        border: none !important;
+        box-shadow: none !important;
+        max-width: 100% !important;
+        max-height: none !important;
+        overflow: visible !important;
+        background: transparent !important;
+    }
+    
+    .modal-body {
+        padding: 0 !important;
+        overflow: visible !important;
+    }
+    
+    .paper-document {
+        box-shadow: none !important;
+        padding: 0 !important;
+        border-radius: 0 !important;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="app-container">
+        
+        <!-- Student Header -->
+        <header class="main-header">
+            <div class="badge">고등학교 2학년 물리학 · 역학과 에너지</div>
+            <h1>⚛️ 물리 개념 탐구 독서 보고서</h1>
+            <p class="subtitle">책 속 이야기와 교과서 속 물리 원리를 연결하여 나만의 과학적 통찰을 넓혀보세요!</p>
+            
+            <div class="notice-banner">
+                <span class="icon">💡</span>
+                <span class="text">추천 도서 목록에서 선택하거나 원하는 물리학 관련 도서를 자유롭게 선택하여 읽고 작성합니다.</span>
+            </div>
+        </header>
+
+        <!-- Form Wrapper -->
+        <main class="report-card">
+            <form id="reportForm" onsubmit="return false;">
+                
+                <!-- Section 1: Basic Student Info -->
+                <section class="form-section">
+                    <h2 class="section-title"><span class="step-num">1</span> 학생 정보</h2>
+                    <div class="grid-2col">
+                        <div class="input-group">
+                            <label for="studentId">학번 <span class="required">*</span></label>
+                            <input type="text" id="studentId" placeholder="예: 20101" required autocomplete="off">
+                        </div>
+                        <div class="input-group">
+                            <label for="studentName">이름 <span class="required">*</span></label>
+                            <input type="text" id="studentName" placeholder="예: 홍길동" required autocomplete="off">
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 2: Book Information -->
+                <section class="form-section">
+                    <h2 class="section-title"><span class="step-num">2</span> 읽은 도서 선택 및 정보</h2>
+                    
+                    <div class="input-group">
+                        <label for="bookSelect">추천 도서 목록에서 선택하기</label>
+                        <select id="bookSelect">
+                            <option value="">-- 추천 도서 선택 (또는 직접 입력) --</option>
+                            <option value="custom">✏️ 직접 입력 (자유 선택 도서)</option>
+                            <option value="1" data-title="물리적 힘" data-author="헨리 페트로스키" data-publisher="서해문집" data-concept="힘(force), 마찰력, 관성, 중력 — 생활 속 물체와 구조물에서 힘의 작용을 발견">물리적 힘 (헨리 페트로스키 | 서해문집)</option>
+                            <option value="2" data-title="재미로 읽다가 100점 맞는 색다른 물리학 (상·하편)" data-author="천아이펑" data-publisher="미디어숲" data-concept="힘과 운동, 운동량·각운동량 보존 법칙, 일과 에너지, 열역학 법칙, 비열, 내연기관">재미로 읽다가 100점 맞는 색다른 물리학 (천아이펑 | 미디어숲)</option>
+                            <option value="3" data-title="떨림과 울림" data-author="김상욱" data-publisher="동아시아" data-concept="에너지 보존(F=ma), 뉴턴 운동 법칙, 단진동, 시공간, 엔트로피">떨림과 울림 (김상욱 | 동아시아)</option>
+                            <option value="4" data-title="익스트림 물리학" data-author="옌보쥔" data-publisher="그린북" data-concept="특수·일반 상대성 이론(시간과 공간), 열역학과 엔트로피, 온도의 극한">익스트림 물리학 (옌보쥔 | 그린북)</option>
+                            <option value="5" data-title="빛의 물리학" data-author="EBS 다큐프라임 <빛의 물리학> 제작팀" data-publisher="해나무" data-concept="특수 상대성 이론, 시공간 개념 — '시공간과 운동' 단원 심화">빛의 물리학 (EBS 다큐프라임 제작팀 | 해나무)</option>
+                            <option value="6" data-title="쉽게 배우는 기계공학 개론" data-author="유주식" data-publisher="교육과학사" data-concept="힘·에너지의 공학적 응용, 열기관, 기계공학 기초 개념 — 진로 연계(기계·에너지 공학)">쉽게 배우는 기계공학 개론 (유주식 | 교육과학사)</option>
+                            <option value="7" data-title="열과 엔트로피는 처음이지?" data-author="곽영직" data-publisher="북멘토" data-concept="열역학 제1·2법칙, 열기관의 발달, 엔트로피 — '열과 에너지' 단원과 직접 연계">열과 엔트로피는 처음이지? (곽영직 | 북멘토)</option>
+                            <option value="8" data-title="상대성이론은 처음이지?" data-author="곽영직" data-publisher="북멘토" data-concept="특수·일반 상대성 이론, 시간과 공간의 개념 — '시공간과 운동' 단원 심화">상대성이론은 처음이지? (곽영직 | 북멘토)</option>
+                        </select>
+                    </div>
+
+                    <div class="grid-2col">
+                        <div class="input-group">
+                            <label for="bookTitle">책 제목 <span class="required">*</span></label>
+                            <input type="text" id="bookTitle" placeholder="책 제목을 입력하세요" required autocomplete="off" onpaste="return false;" oncopy="return false;" oncut="return false;">
+                        </div>
+                        <div class="input-group">
+                            <label for="bookAuthor">지은이 / 출판사 <span class="required">*</span></label>
+                            <input type="text" id="bookAuthor" placeholder="지은이 및 출판사" required autocomplete="off" onpaste="return false;" oncopy="return false;" oncut="return false;">
+                        </div>
+                    </div>
+
+                    <div id="recommendedConceptBox" class="concept-hint-box hidden" style="display: none;">
+                        <strong>📌 교과서 관련 핵심 개념 참고:</strong>
+                        <span id="conceptText"></span>
+                    </div>
+                </section>
+
+                <!-- Section 3: Summary connected to Mechanics and Energy (Limit 300 characters) -->
+                <section class="form-section">
+                    <div class="section-header-flex">
+                        <h2 class="section-title"><span class="step-num">3</span> 교과서 개념 연계 내용 요약</h2>
+                        <div class="sentence-badge" id="charBadge">0 / 300자</div>
+                    </div>
+                    
+                    <div class="guide-box">
+                        <p class="guide-text">
+                            <strong>💬 [고2 물리 팁]</strong> 책 내용 중에서 우리 <strong>'역학과 에너지'</strong> 수업 시간에 배운 물리 개념(뉴턴 운동 법칙, 운동량과 충격량, 역학적 에너지 보존, 열역학 법칙, 특수 상대성 이론 등)과 연결되는 핵심 내용을 <strong>300자 이내</strong>로 명확하게 요약해서 적어보세요!
+                        </p>
+                    </div>
+
+                    <div class="textarea-group">
+                        <textarea id="conceptSummary" rows="4" placeholder="예) 롤러코스터 하강 시 위치에너지가 운동에너지로 전환되는 원리는 역학적 에너지 보존 법칙과 직접 연결됩니다." required autocomplete="off" onpaste="return false;" oncopy="return false;" oncut="return false;"></textarea>
+                        <div class="textarea-footer">
+                            <span class="warning-text" id="charWarning" style="display: none;">⚠️ 300자를 초과했습니다! 핵심 내용 위주로 300자 이내로 정리해 주세요.</span>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Section 4: Curiosity / Questions from Textbook -->
+                <section class="form-section">
+                    <h2 class="section-title"><span class="step-num">4</span> 교과서 속 의문 및 호기심</h2>
+                    
+                    <div class="guide-box">
+                        <p class="guide-text">
+                            <strong>💬 [고2 물리 팁]</strong> '역학과 에너지' 교과서 내용을 공부하면서 <strong>평소에 '왜 그럴까?' 하고 궁금했거나 더 흥미가 생긴 개념</strong>은 무엇이었나요? (예: 빛의 속도에 가까워지면 왜 시간이 천천히 흐를까?, 열효율 100%인 열기관은 왜 만들 수 없을까? 등)
+                        </p>
+                    </div>
+
+                    <div class="textarea-group">
+                        <textarea id="textbookCuriosity" rows="4" placeholder="교과서나 수업 내용 중 의문이 생겼던 점이나 더 깊이 탐구하고 싶었던 물리 개념을 적어주세요." required autocomplete="off" onpaste="return false;" oncopy="return false;" oncut="return false;"></textarea>
+                    </div>
+                </section>
+
+                <!-- Section 5: Extended Inquiry & Reflections -->
+                <section class="form-section">
+                    <h2 class="section-title"><span class="step-num">5</span> 탐구 확장 및 나만의 생각 작성하기</h2>
+                    
+                    <div class="guide-box">
+                        <p class="guide-text">
+                            <strong>💬 [고2 물리 팁]</strong> 책을 읽고 새롭게 알게 되었거나 확장된 생각을 적어봅시다. 아래 항목 중 <strong>자신이 표현하기 가장 좋은 주제를 1가지 이상 선택</strong>하여 깊이 있게 작성해보세요!
+                        </p>
+                        <ul class="option-tags">
+                            <li>✨ 새롭게 알게 된 사실</li>
+                            <li>🔄 개념의 재해석</li>
+                            <li>📐 직접 수행한 계산이나 모델링</li>
+                            <li>🧐 비판적 사고</li>
+                            <li>💭 느낀 점</li>
+                            <li>🚀 실생활 적용 방안 제안</li>
+                        </ul>
+                    </div>
+
+                    <div class="textarea-group">
+                        <textarea id="extendedInquiry" rows="6" placeholder="위 보기(새롭게 알게 된 사실, 개념의 재해석, 직접 수행한 계산/모델링, 비판적 사고, 느낀 점, 실생활 적용 방안 등) 중 하나 이상을 바탕으로 나의 생각이나 탐구 내용을 자유롭게 작성해 보세요." required autocomplete="off" onpaste="return false;" oncopy="return false;" oncut="return false;"></textarea>
+                    </div>
+                </section>
+
+                <!-- Action Controls -->
+                <div class="form-actions-wrapper">
+                    <div class="action-row">
+                        <button type="button" id="tempSaveBtn" class="btn btn-secondary">💾 임시 저장</button>
+                        <button type="button" id="previewBtn" class="btn btn-primary">📄 미리보기 & 인쇄</button>
+                        <button type="button" id="submitReportBtn" class="btn btn-success-large">🚀 독서 보고서 제출하기</button>
+                    </div>
+                </div>
+
+            </form>
+        </main>
+
+        <!-- Preview Modal / Printable View -->
+        <div id="reportModal" class="modal hidden" style="display: none;">
+            <div class="modal-overlay" id="modalOverlay"></div>
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2>📋 물리 개념 탐구 독서 보고서 미리보기</h2>
+                    <button type="button" class="close-btn" id="closeModalBtn">&times;</button>
+                </div>
+                <div class="modal-body print-area" id="printArea">
+                    <!-- Dynamic Preview Content -->
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" id="closeModalFooterBtn">닫기</button>
+                    <button type="button" class="btn btn-success" id="printReportBtn">🖨️ 인쇄 / PDF 저장</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Submission Success Modal Popup -->
+        <div id="submitSuccessModal" class="modal hidden" style="display: none;">
+            <div class="modal-overlay" id="successOverlay"></div>
+            <div class="modal-content success-modal-style">
+                <div class="success-modal-body">
+                    <div class="success-icon-large">🎉</div>
+                    <h2>독서 보고서 제출 완료!</h2>
+                    <div class="success-modal-desc" id="successModalInfo">
+                        보고서가 수거함으로 정상 제출되었습니다.
+                    </div>
+                    <div class="success-btn-group">
+                        <button type="button" class="btn btn-accent" id="downloadBackupBtn">📥 제출용 파일(.json) 백업 다운로드</button>
+                        <button type="button" class="btn btn-primary" id="closeSuccessModalBtn">확인 완료</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Copy-Paste Warning Center Modal Popup -->
+        <div id="pasteWarningModal" class="modal hidden" style="display: none;">
+            <div class="modal-overlay" id="pasteOverlay"></div>
+            <div class="modal-content warning-modal-style">
+                <div class="warning-modal-body">
+                    <div class="warning-icon-large">🚫</div>
+                    <h2>복사 / 붙여넣기 사용 불가</h2>
+                    <p class="warning-modal-desc">
+                        이 독서 활동은 <strong>직접 책을 읽고 스스로 생각하며 작성하는 탐구 활동</strong>입니다.<br>
+                        인터넷 글이나 타인의 문장을 복사/붙여넣기할 수 없으니,<br>
+                        <strong>나만의 솔직한 언어로 직접 입력</strong>해 주세요! 😊
+                    </p>
+                    <button type="button" class="btn btn-primary" id="closePasteModalBtn" style="margin-top: 1.5rem; width: 100%;">확인했습니다 (직접 입력하기)</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Toast Notification -->
+        <div id="toast" class="toast hidden" style="display: none;"></div>
+        
+        <!-- Footer -->
+        <footer class="main-footer">
+            <p>© 2026 물리학 독서 탐구 활동 | 2학년 역학과 에너지</p>
+        </footer>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Elements
+    const studentIdInput = document.getElementById('studentId');
+    const studentNameInput = document.getElementById('studentName');
+    const bookSelect = document.getElementById('bookSelect');
+    const bookTitleInput = document.getElementById('bookTitle');
+    const bookAuthorInput = document.getElementById('bookAuthor');
+    const conceptSummaryInput = document.getElementById('conceptSummary');
+    const textbookCuriosityInput = document.getElementById('textbookCuriosity');
+    const extendedInquiryInput = document.getElementById('extendedInquiry');
+    const reportForm = document.getElementById('reportForm');
+    
+    const conceptHintBox = document.getElementById('recommendedConceptBox');
+    const conceptText = document.getElementById('conceptText');
+    const charBadge = document.getElementById('charBadge');
+    const charWarning = document.getElementById('charWarning');
+    
+    const tempSaveBtn = document.getElementById('tempSaveBtn');
+    const previewBtn = document.getElementById('previewBtn');
+    const submitReportBtn = document.getElementById('submitReportBtn');
+    
+    const reportModal = document.getElementById('reportModal');
+    const closeModalBtn = document.getElementById('closeModalBtn');
+    const closeModalFooterBtn = document.getElementById('closeModalFooterBtn');
+    const printReportBtn = document.getElementById('printReportBtn');
+    const printArea = document.getElementById('printArea');
+
+    // Success Modal Elements
+    const submitSuccessModal = document.getElementById('submitSuccessModal');
+    const successModalInfo = document.getElementById('successModalInfo');
+    const downloadBackupBtn = document.getElementById('downloadBackupBtn');
+    const closeSuccessModalBtn = document.getElementById('closeSuccessModalBtn');
+    const successOverlay = document.getElementById('successOverlay');
+
+    // Warning Modal Elements
+    const pasteWarningModal = document.getElementById('pasteWarningModal');
+    const closePasteModalBtn = document.getElementById('closePasteModalBtn');
+    const pasteOverlay = document.getElementById('pasteOverlay');
+    const toast = document.getElementById('toast');
+
+    const COLLECTED_KEY = 'physics_collected_reports_v1';
+    const DRAFT_KEY = 'physics_reading_report_draft_v1';
+    const GOOGLE_SCRIPT_URL_KEY = 'physics_teacher_script_url_v1';
+
+    let lastSubmittedData = null;
+
+    // Recommendation Book Data Map (모바일/PC 공통 데이터 맵)
+    const BOOK_DATA_MAP = {
+        "1": {
+            title: "물리적 힘",
+            author: "헨리 페트로스키",
+            publisher: "서해문집",
+            concept: "힘(force), 마찰력, 관성, 중력 — 생활 속 물체와 구조물에서 힘의 작용을 발견"
+        },
+        "2": {
+            title: "재미로 읽다가 100점 맞는 색다른 물리학 (상·하편)",
+            author: "천아이펑",
+            publisher: "미디어숲",
+            concept: "힘과 운동, 운동량·각운동량 보존 법칙, 일과 에너지, 열역학 법칙, 비열, 내연기관"
+        },
+        "3": {
+            title: "떨림과 울림",
+            author: "김상욱",
+            publisher: "동아시아",
+            concept: "에너지 보존(F=ma), 뉴턴 운동 법칙, 단진동, 시공간, 엔트로피"
+        },
+        "4": {
+            title: "익스트림 물리학",
+            author: "옌보쥔",
+            publisher: "그린북",
+            concept: "특수·일반 상대성 이론(시간과 공간), 열역학과 엔트로피, 온도의 극한"
+        },
+        "5": {
+            title: "빛의 물리학",
+            author: "EBS 다큐프라임 <빛의 물리학> 제작팀",
+            publisher: "해나무",
+            concept: "특수 상대성 이론, 시공간 개념 — '시공간과 운동' 단원 심화"
+        },
+        "6": {
+            title: "쉽게 배우는 기계공학 개론",
+            author: "유주식",
+            publisher: "교육과학사",
+            concept: "힘·에너지의 공학적 응용, 열기관, 기계공학 기초 개념 — 진로 연계(기계·에너지 공학)"
+        },
+        "7": {
+            title: "열과 엔트로피는 처음이지?",
+            author: "곽영직",
+            publisher: "북멘토",
+            concept: "열역학 제1·2법칙, 열기관의 발달, 엔트로피 — '열과 에너지' 단원과 직접 연계"
+        },
+        "8": {
+            title: "상대성이론은 처음이지?",
+            author: "곽영직",
+            publisher: "북멘토",
+            concept: "특수·일반 상대성 이론, 시간과 공간의 개념 — '시공간과 운동' 단원 심화"
+        }
+    };
+
+    // Toast Notification Helper (화면 상단 고정 노출)
+    function showToast(message, type = 'error') {
+        toast.textContent = message;
+        toast.className = `toast ${type}`;
+        toast.classList.remove('hidden');
+        toast.style.display = 'flex';
+        if (toast.timeoutId) clearTimeout(toast.timeoutId);
+        toast.timeoutId = setTimeout(() => {
+            toast.classList.add('hidden');
+            toast.style.display = 'none';
+        }, 3500);
+    }
+
+    // 1. Anti-Paste Protection (복사/붙여넣기 방지)
+    function triggerPasteWarning() {
+        showToast('💡 직접 읽고 스스로 생각하며 작성해봅시다! (복사/붙여넣기는 금지되어 있어요)', 'error');
+        if (pasteWarningModal) {
+            pasteWarningModal.classList.remove('hidden');
+            pasteWarningModal.style.display = 'flex';
+        }
+    }
+
+    if (closePasteModalBtn) {
+        closePasteModalBtn.addEventListener('click', () => {
+            if (pasteWarningModal) {
+                pasteWarningModal.classList.add('hidden');
+                pasteWarningModal.style.display = 'none';
+            }
+        });
+    }
+
+    if (pasteOverlay) {
+        pasteOverlay.addEventListener('click', () => {
+            if (pasteWarningModal) {
+                pasteWarningModal.classList.add('hidden');
+                pasteWarningModal.style.display = 'none';
+            }
+        });
+    }
+
+    const inputFields = [
+        studentIdInput,
+        studentNameInput,
+        bookTitleInput,
+        bookAuthorInput,
+        conceptSummaryInput,
+        textbookCuriosityInput,
+        extendedInquiryInput
+    ];
+
+        inputFields.forEach(input => {
+            if (!input) return;
+
+            // Clipboard paste event
+            input.addEventListener('paste', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                triggerPasteWarning();
+                return false;
+            });
+
+            // Prevent drag & drop text into input
+            input.addEventListener('drop', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                triggerPasteWarning();
+                return false;
+            });
+
+            // Mobile Soft Keyboard clipboard / autocomplete insertion prevention
+            input.addEventListener('beforeinput', (e) => {
+                const type = e.inputType || '';
+                if (type.toLowerCase().includes('paste') || type.toLowerCase().includes('drop') || type === 'insertFromPaste' || type === 'insertFromDrop') {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    triggerPasteWarning();
+                    return false;
+                }
+            });
+
+            // Mobile safari / Android legacy textInput event
+            input.addEventListener('textInput', (e) => {
+                if (e.data && e.data.length > 5) { // 문자열이 한 번에 5자 이상 들어오는 경우(붙여넣기)
+                    e.preventDefault();
+                    e.stopPropagation();
+                    triggerPasteWarning();
+                    return false;
+                }
+            });
+
+            // Right click / long press context menu prevention
+            input.addEventListener('contextmenu', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                return false;
+            });
+
+            // Keyboard Shortcuts: Ctrl+V, Cmd+V, Shift+Insert
+            input.addEventListener('keydown', (e) => {
+                if ((e.ctrlKey || e.metaKey) && (e.key.toLowerCase() === 'v' || e.keyCode === 86)) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    triggerPasteWarning();
+                    return false;
+                }
+                if (e.shiftKey && (e.key === 'Insert' || e.keyCode === 45)) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    triggerPasteWarning();
+                    return false;
+                }
+            });
+        });
+
+    // 2. Recommended Book Selection Handler (모바일/PC 완전 자동 채우기)
+    function handleBookSelection() {
+        const val = bookSelect.value;
+        const selectedOption = bookSelect.options[bookSelect.selectedIndex];
+
+        let title = '';
+        let author = '';
+        let publisher = '';
+        let concept = '';
+
+        if (val && BOOK_DATA_MAP[val]) {
+            const data = BOOK_DATA_MAP[val];
+            title = data.title;
+            author = data.author;
+            publisher = data.publisher;
+            concept = data.concept;
+        } else if (selectedOption) {
+            title = selectedOption.getAttribute('data-title') || '';
+            author = selectedOption.getAttribute('data-author') || '';
+            publisher = selectedOption.getAttribute('data-publisher') || '';
+            concept = selectedOption.getAttribute('data-concept') || '';
+        }
+
+        if (val && val !== 'custom') {
+            bookTitleInput.value = title;
+            bookAuthorInput.value = publisher ? `${author} (${publisher})` : author;
+            bookTitleInput.classList.remove('input-error');
+            bookAuthorInput.classList.remove('input-error');
+
+            if (concept) {
+                conceptText.textContent = concept;
+                conceptHintBox.classList.remove('hidden');
+                conceptHintBox.style.display = 'block';
+            } else {
+                conceptHintBox.classList.add('hidden');
+                conceptHintBox.style.display = 'none';
+            }
+        } else if (val === 'custom') {
+            bookTitleInput.value = '';
+            bookAuthorInput.value = '';
+            bookTitleInput.focus();
+            conceptHintBox.classList.add('hidden');
+            conceptHintBox.style.display = 'none';
+        } else {
+            bookTitleInput.value = '';
+            bookAuthorInput.value = '';
+            conceptHintBox.classList.add('hidden');
+            conceptHintBox.style.display = 'none';
+        }
+        autoSaveData();
+    }
+
+    bookSelect.addEventListener('change', handleBookSelection);
+    bookSelect.addEventListener('input', handleBookSelection);
+
+    // 3. 300자 제한 검사 및 실시간 경고 제어
+    let lastSummaryLengthToast = 0;
+    function updateSummaryMetrics() {
+        const text = conceptSummaryInput.value;
+        const charCount = text.length;
+
+        if (charBadge) charBadge.textContent = `${charCount} / 300자`;
+
+        if (charCount > 300) {
+            if (charBadge) charBadge.classList.add('exceeded');
+            conceptSummaryInput.classList.add('input-error');
+            if (charWarning) {
+                charWarning.textContent = `⚠️ 300자를 초과했습니다! (현재 ${charCount}자 - 300자 이내로 정리해 주세요)`;
+                charWarning.style.display = 'block';
+            }
+            if (lastSummaryLengthToast !== charCount) {
+                showToast(`⚠️ 개념 연계 요약이 300자를 초과했습니다! (현재 ${charCount}자 / 300자 이내)`, 'error');
+                lastSummaryLengthToast = charCount;
+            }
+        } else {
+            if (charBadge) charBadge.classList.remove('exceeded');
+            conceptSummaryInput.classList.remove('input-error');
+            if (charWarning) {
+                charWarning.style.display = 'none';
+            }
+            lastSummaryLengthToast = 0;
+        }
+    }
+
+    ['input', 'keyup', 'change', 'blur', 'compositionend'].forEach(evtType => {
+        conceptSummaryInput.addEventListener(evtType, () => {
+            updateSummaryMetrics();
+            autoSaveData();
+        });
+    });
+
+    inputFields.forEach(elem => {
+        if (elem && elem !== conceptSummaryInput) {
+            elem.addEventListener('input', () => {
+                elem.classList.remove('input-error');
+                autoSaveData();
+            });
+        }
+    });
+
+    // 4. LocalStorage Auto-Save & Restore
+    function autoSaveData() {
+        const data = {
+            studentId: studentIdInput.value,
+            studentName: studentNameInput.value,
+            bookSelect: bookSelect.value,
+            bookTitle: bookTitleInput.value,
+            bookAuthor: bookAuthorInput.value,
+            conceptSummary: conceptSummaryInput.value,
+            textbookCuriosity: textbookCuriosityInput.value,
+            extendedInquiry: extendedInquiryInput.value,
+            submittedAt: new Date().toISOString()
+        };
+        localStorage.setItem(DRAFT_KEY, JSON.stringify(data));
+    }
+
+    function restoreData() {
+        const saved = localStorage.getItem(DRAFT_KEY);
+        if (!saved) return;
+        try {
+            const data = JSON.parse(saved);
+            if (data.studentId) studentIdInput.value = data.studentId;
+            if (data.studentName) studentNameInput.value = data.studentName;
+            if (data.bookSelect) bookSelect.value = data.bookSelect;
+            if (data.bookTitle) bookTitleInput.value = data.bookTitle;
+            if (data.bookAuthor) bookAuthorInput.value = data.bookAuthor;
+            if (data.conceptSummary) conceptSummaryInput.value = data.conceptSummary;
+            if (data.textbookCuriosity) textbookCuriosityInput.value = data.textbookCuriosity;
+            if (data.extendedInquiry) extendedInquiryInput.value = data.extendedInquiry;
+
+            updateSummaryMetrics();
+            
+            if (bookSelect.value) {
+                handleBookSelection();
+            }
+        } catch (e) {
+            console.error('Failed to restore draft', e);
+        }
+    }
+
+    tempSaveBtn.addEventListener('click', () => {
+        autoSaveData();
+        showToast('💾 작성 중인 내용이 안전하게 임시 저장되었습니다.', 'info');
+    });
+
+    restoreData();
+
+    // 5. Validation Logic
+    function highlightAndScroll(elem, msg) {
+        elem.classList.add('input-error');
+        showToast(msg, 'error');
+        elem.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        setTimeout(() => elem.focus(), 300);
+    }
+
+    function validateForm() {
+        inputFields.forEach(input => {
+            if (input) input.classList.remove('input-error');
+        });
+
+        if (!studentIdInput.value.trim()) {
+            highlightAndScroll(studentIdInput, '⚠️ 학번을 입력해 주세요.');
+            return false;
+        }
+        if (!studentNameInput.value.trim()) {
+            highlightAndScroll(studentNameInput, '⚠️ 이름을 입력해 주세요.');
+            return false;
+        }
+        if (!bookTitleInput.value.trim()) {
+            highlightAndScroll(bookTitleInput, '⚠️ 책 제목을 선택하거나 입력해 주세요.');
+            return false;
+        }
+        if (!conceptSummaryInput.value.trim()) {
+            highlightAndScroll(conceptSummaryInput, '⚠️ 교과서 개념 연계 요약을 작성해 주세요.');
+            return false;
+        }
+        if (conceptSummaryInput.value.length > 300) {
+            highlightAndScroll(conceptSummaryInput, `⚠️ 개념 연계 요약은 300자 이내로 작성해야 합니다! (현재 ${conceptSummaryInput.value.length}자)`);
+            return false;
+        }
+        if (!textbookCuriosityInput.value.trim()) {
+            highlightAndScroll(textbookCuriosityInput, '⚠️ 교과서 속 의문 및 호기심을 작성해 주세요.');
+            return false;
+        }
+        if (!extendedInquiryInput.value.trim()) {
+            highlightAndScroll(extendedInquiryInput, '⚠️ 탐구 확장 및 나만의 생각을 작성해 주세요.');
+            return false;
+        }
+        return true;
+    }
+
+    // 6. Direct Submission Action
+    async function executeSubmission() {
+        if (!validateForm()) return;
+
+        if (document.activeElement && typeof document.activeElement.blur === 'function') {
+            document.activeElement.blur();
+        }
+
+        const reportObj = {
+            studentId: studentIdInput.value.trim(),
+            studentName: studentNameInput.value.trim(),
+            bookTitle: bookTitleInput.value.trim(),
+            bookAuthor: bookAuthorInput.value.trim(),
+            conceptSummary: conceptSummaryInput.value.trim(),
+            textbookCuriosity: textbookCuriosityInput.value.trim(),
+            extendedInquiry: extendedInquiryInput.value.trim(),
+            submittedAt: new Date().toLocaleString('ko-KR')
+        };
+
+        lastSubmittedData = reportObj;
+
+        // 1) Save to local collection storage
+        try {
+            let collected = localStorage.getItem(COLLECTED_KEY) ? JSON.parse(localStorage.getItem(COLLECTED_KEY)) : [];
+            const existingIdx = collected.findIndex(r => r.studentId === reportObj.studentId);
+            if (existingIdx >= 0) {
+                collected[existingIdx] = reportObj;
+            } else {
+                collected.push(reportObj);
+            }
+            localStorage.setItem(COLLECTED_KEY, JSON.stringify(collected));
+        } catch (e) {
+            console.error('Local collection save failed', e);
+        }
+
+        // 2) Google Apps Script Webhook 연동 (단일 파일 실행시에도 구글 시트 전송)
+        const defaultScriptUrl = ""; // 선생님의 구글 Apps Script URL을 여기에 입력하거나 teacher.html에서 등록할 수 있습니다.
+        const urlParams = new URLSearchParams(window.location.search);
+        const scriptUrl = urlParams.get('url') || localStorage.getItem(GOOGLE_SCRIPT_URL_KEY) || defaultScriptUrl;
+
+        if (scriptUrl && scriptUrl.trim()) {
+            try {
+                // text/plain 방식으로 전송하면 CORS preflight 에러 없이 구글 앱스크립트로 안전하게 전달됩니다.
+                fetch(scriptUrl.trim(), {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    headers: {
+                        'Content-Type': 'text/plain;charset=utf-8'
+                    },
+                    body: JSON.stringify(reportObj)
+                }).catch(err => console.error('Sheet post fail:', err));
+            } catch (err) {
+                console.error('Google Sheet Post Error', err);
+            }
+        }
+
+        // 3) Show Submission Success Modal Popup
+        successModalInfo.innerHTML = `
+            <strong>제출 일시:</strong> ${reportObj.submittedAt}<br>
+            <strong>학생:</strong> ${escapeHtml(reportObj.studentId)} ${escapeHtml(reportObj.studentName)}<br>
+            <strong>도서:</strong> 📖 ${escapeHtml(reportObj.bookTitle)} (${escapeHtml(reportObj.bookAuthor)})
+        `;
+        submitSuccessModal.classList.remove('hidden');
+        submitSuccessModal.style.display = 'flex';
+
+        showToast('🎉 독서 보고서 제출이 완료되었습니다!', 'success');
+    }
+
+    submitReportBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        executeSubmission();
+    });
+
+    if (reportForm) {
+        reportForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            executeSubmission();
+        });
+    }
+
+    // Backup Download Button inside Success Modal
+    downloadBackupBtn.addEventListener('click', () => {
+        if (!lastSubmittedData) return;
+        const jsonStr = JSON.stringify(lastSubmittedData, null, 2);
+        const blob = new Blob([jsonStr], { type: 'application/json' });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        const filename = `[${lastSubmittedData.studentId}_${lastSubmittedData.studentName}]_역학과에너지_독서보고서.json`;
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+    });
+
+    closeSuccessModalBtn.addEventListener('click', () => {
+        submitSuccessModal.classList.add('hidden');
+        submitSuccessModal.style.display = 'none';
+    });
+
+    successOverlay.addEventListener('click', () => {
+        submitSuccessModal.classList.add('hidden');
+        submitSuccessModal.style.display = 'none';
+    });
+
+    // 7. Preview Document Generation
+    function escapeHtml(str) {
+        if (!str) return '';
+        return str
+            .replace(/&/g, "&amp;")
+            .replace(/</g, "&lt;")
+            .replace(/>/g, "&gt;")
+            .replace(/"/g, "&quot;")
+            .replace(/'/g, "&#039;");
+    }
+
+    function renderPreviewHtml(data) {
+        const dateStr = data.submittedAt || `${new Date().getFullYear()}년 ${new Date().getMonth() + 1}월 ${new Date().getDate()}일`;
+
+        return `
+            <div class="paper-document">
+                <div class="paper-header">
+                    <h1>[역학과 에너지] 물리 개념 탐구 독서 보고서</h1>
+                    <div class="paper-sub">고등학교 2학년 물리학 탐구 활동</div>
+                </div>
+
+                <table class="paper-table">
+                    <tr>
+                        <th>학번</th>
+                        <td>${escapeHtml(data.studentId)}</td>
+                        <th>이름</th>
+                        <td>${escapeHtml(data.studentName)}</td>
+                    </tr>
+                    <tr>
+                        <th>도서명</th>
+                        <td>${escapeHtml(data.bookTitle)}</td>
+                        <th>지은이/출판사</th>
+                        <td>${escapeHtml(data.bookAuthor)}</td>
+                    </tr>
+                </table>
+
+                <div class="paper-section">
+                    <div class="paper-section-title">1. 교과서 개념 연계 요약 (300자 이내)</div>
+                    <div class="paper-box">${escapeHtml(data.conceptSummary)}</div>
+                </div>
+
+                <div class="paper-section">
+                    <div class="paper-section-title">2. 교과서 내용 중 의문 및 관심 물리 개념</div>
+                    <div class="paper-box">${escapeHtml(data.textbookCuriosity)}</div>
+                </div>
+
+                <div class="paper-section">
+                    <div class="paper-section-title">3. 도서를 통한 깊이 있는 탐구 및 나만의 생각</div>
+                    <div class="paper-box">${escapeHtml(data.extendedInquiry)}</div>
+                </div>
+
+                <div class="footer-stamp">
+                    작성일자: ${dateStr} | 학생 제출용 보고서
+                </div>
+            </div>
+        `;
+    }
+
+    previewBtn.addEventListener('click', () => {
+        if (!validateForm()) return;
+        const currentData = {
+            studentId: studentIdInput.value.trim(),
+            studentName: studentNameInput.value.trim(),
+            bookTitle: bookTitleInput.value.trim(),
+            bookAuthor: bookAuthorInput.value.trim(),
+            conceptSummary: conceptSummaryInput.value.trim(),
+            textbookCuriosity: textbookCuriosityInput.value.trim(),
+            extendedInquiry: extendedInquiryInput.value.trim()
+        };
+        printArea.innerHTML = renderPreviewHtml(currentData);
+        reportModal.classList.remove('hidden');
+        reportModal.style.display = 'flex';
+    });
+
+    closeModalBtn.addEventListener('click', () => {
+        reportModal.classList.add('hidden');
+        reportModal.style.display = 'none';
+    });
+    closeModalFooterBtn.addEventListener('click', () => {
+        reportModal.classList.add('hidden');
+        reportModal.style.display = 'none';
+    });
+    printReportBtn.addEventListener('click', () => window.print());
+});
+    </script>
+</body>
+</html>
